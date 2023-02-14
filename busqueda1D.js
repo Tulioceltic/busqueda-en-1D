@@ -4,6 +4,10 @@ let acompad=[];
 let gradod=[];
 
 function inicio (){
+    document.getElementById("cotaI").innerHTML = "";
+    document.getElementById("cotaS").innerHTML = "";
+    document.getElementById("puntos").innerHTML = "";
+    document.getElementById("valores").innerHTML = "";
     let grado=prompt("Ingrese el grado de la ecuacion");
 
     for (i=0;i<=grado;i++){
@@ -136,4 +140,53 @@ function maximizar(){
     document.getElementById("cotaS").innerHTML = listaCotaS;
     document.getElementById("puntos").innerHTML = listaPuntos;
     document.getElementById("valores").innerHTML = listaValores;
+}
+
+function minejer(){
+    let cotaI = 400;
+    let cotaS = 1300;
+    let listaCotaI =[];
+    let listaCotaS =[];
+    let punto;
+    let listaPuntos=[];
+    let valor;
+    let listaValores=[];
+    while (cotaS-cotaI>=0.02){
+        listaCotaI.push(cotaI);
+        listaCotaS.push(cotaS);
+        punto=prom(cotaI,cotaS);
+        valor=punto**-2;
+        valor=valor*300000000;
+        valor=400-valor;
+        listaValores.push(valor);
+        listaPuntos.push(punto);
+        if (valor<=0){
+            cotaS=punto;
+        } else {
+            cotaI=punto;
+        }
+    }
+    listaCotaI.unshift("Cota Inferior");
+    listaCotaS.unshift("Cota Superior");
+    listaPuntos.unshift("Punto a evaluar");
+    listaValores.unshift("Resultado f'(x)");
+    listaCotaI=listaCotaI.join("<br>");
+    listaCotaS=listaCotaS.join("<br>");
+    listaPuntos=listaPuntos.join("<br>");
+    listaValores=listaValores.join("<br>");
+    document.getElementById("here").innerHTML = "<h3>Maximizando</h3>";
+    document.getElementById("cotaI").innerHTML = listaCotaI;
+    document.getElementById("cotaS").innerHTML = listaCotaS;
+    document.getElementById("puntos").innerHTML = listaPuntos;
+    document.getElementById("valores").innerHTML = listaValores;
+}
+
+function ejercicio(){
+    document.getElementById("cotaI").innerHTML = "";
+    document.getElementById("cotaS").innerHTML = "";
+    document.getElementById("puntos").innerHTML = "";
+    document.getElementById("valores").innerHTML = "";
+    document.getElementById("funcion").innerHTML = "400X+300000000X^-1";
+    document.getElementById("derivada").innerHTML = "400-300000000X^-2";
+    minejer();
 }

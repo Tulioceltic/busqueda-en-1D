@@ -1,88 +1,33 @@
-* {
- background-color: #D5DBDB;
- margin: 0;
- padding: 0;
-}
-
-
 #body {
     width: 99%;           
     height: 1000px;
-    position: relative;
 }
 
 #info {
     border: 5px solid black;
-    border-radius: 10%;
-    width: 100%;           
-    height: 100%;          
-    background: #707B7C;        
-    position: relative;
+    width: auto;           
+    height: auto;          
+    display: grid;
+    background: #707B7C;
 }
 
-#funcion {
-    position: absolute;
-    align-items: center;
-    width: auto;
-    margin: 5%;
+#funciones{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-#derivada {
-    position: absolute;
-    align-items: center;
-    width: auto;
-    margin: 5%;
-}
-
-#info >{
-    position: absolute;
-    align-items: center;
-    width: auto;
-    padding: 5%;
-}
-
-h2 {
-    margin: 5%;
-    position: absolute;
-}
-
-input{
-    font-weight: 100%;
-    width: 100px;
-    height: 50px;
-    
-}
-
-form{
-    position: absolute;
-    align-items: center;
-    margin: 5%;
-    margin-top: 10%;
-    align-items: center;
+#funcion,#derivada{
+    background: #BDC3C7;
+    border: 1px transparent
 }
 
 #aqui{
-    margin: 1%;
-    height: 100px;
-}
-
-#inicio {
-    font-weight: 100px;
-    height: 50px;
-    width: 200px;
-    margin-left: 5%;
-}
-
-#accion{
-    margin: 10%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
 }
 
 .prueba{
-    border: 3px solid black;
-    margin: 0;
-    padding: 0;
-    height: auto;
-    width: calc(90%/4);
-    display: inline-block;
-    padding-left: 0.5%;
+    padding: 2%;
+    background-color: #acb9b0;
+    border: 1px solid black;
 }
