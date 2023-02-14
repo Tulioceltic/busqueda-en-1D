@@ -8,7 +8,7 @@
     width: auto;           
     height: auto;          
     display: grid;
-    background: #707B7C;
+    background: #80be7e;
 }
 
 #funciones{
@@ -18,7 +18,7 @@
 
 #funcion,#derivada{
     background: #BDC3C7;
-    border: 1px transparent
+    border: 1px transparent;
 }
 
 #aqui{
