@@ -151,7 +151,7 @@ function minejer(){
     let listaPuntos=[];
     let valor;
     let listaValores=[];
-    while (cotaS-cotaI>=0.02){
+    while (cotaS-cotaI>=0.002){
         listaCotaI.push(cotaI);
         listaCotaS.push(cotaS);
         punto=prom(cotaI,cotaS);
@@ -161,9 +161,9 @@ function minejer(){
         listaValores.push(valor);
         listaPuntos.push(punto);
         if (valor<=0){
-            cotaS=punto;
-        } else {
             cotaI=punto;
+        } else {
+            cotaS=punto;
         }
     }
     listaCotaI.unshift("Cota Inferior");
@@ -174,7 +174,7 @@ function minejer(){
     listaCotaS=listaCotaS.join("<br>");
     listaPuntos=listaPuntos.join("<br>");
     listaValores=listaValores.join("<br>");
-    document.getElementById("here").innerHTML = "<h3>Maximizando</h3>";
+    document.getElementById("here").innerHTML = "<h3>Minimizando</h3>";
     document.getElementById("cotaI").innerHTML = listaCotaI;
     document.getElementById("cotaS").innerHTML = listaCotaS;
     document.getElementById("puntos").innerHTML = listaPuntos;
